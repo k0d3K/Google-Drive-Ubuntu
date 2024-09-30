@@ -36,10 +36,13 @@ This document explains how to use a script to automatically monitor a folder for
      ```
 
 4. **Start the script:**
-   * In the terminal, run the script with the following command:
+   * You can run the script with the following commands:
 
      ```bash
+     # Run the script in the terminal
      ./monitor.sh
+     # Run the script in the background
+     nohup ./monitor.sh &
      ```
 
      * This will start the script in the foreground, continuously monitoring the folder for changes.
