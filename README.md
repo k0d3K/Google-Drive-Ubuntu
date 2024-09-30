@@ -49,11 +49,7 @@ This document explains how to use a script to automatically monitor a folder for
    * **Terminate the process:** If the script is running in the background, you can find its process ID (PID) using the `ps` command and then terminate it using the `kill` command. For example:
 
      ```bash
-     # Find the PID
-     ps aux | grep monitor.sh
-
-     # Terminate the process with PID 1234 (replace with actual PID)
-     kill 1234
+     kill $(ps aux | grep -v grep | grep monitor.sh | awk '{print $2}')
      ```
 
 **Explanation:**
