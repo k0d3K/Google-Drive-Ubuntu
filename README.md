@@ -4,12 +4,12 @@ This document explains how to use a script to automatically monitor a folder for
 
 **Prerequisites:**
 
-* Linux system with `rclone` and `inotifywait` installed.
+* Linux system with `rclone` and `inotify-tools` installed.
 * rclone configured with your Google Drive account credentials.
 
 **Files:**
 
-* `monitor.sh`: The script that monitors the folder and triggers synchronization.
+* `google_drive_monitor.sh`: The script that monitors the folder and triggers synchronization.
 
 **Steps:**
 
@@ -18,7 +18,7 @@ This document explains how to use a script to automatically monitor a folder for
    * Make sure you remember the name you assigned to your Google Drive remote during configuration (e.g., `remote:MyDrive`).
 
 2. **Customize the script (optional):**
-   * Open `monitor.sh` in a text editor.
+   * Open `google_drive_monitor.sh` in a text editor.
    * Replace the following placeholders with your desired values:
      * `folder_to_monitor`: The path to the folder you want to monitor.
      * `rclone_command`: Your rclone sync command.  For example, to synchronize the entire folder:
@@ -32,7 +32,7 @@ This document explains how to use a script to automatically monitor a folder for
    * Run the following command:
 
      ```bash
-     chmod +x monitor.sh
+     chmod +x google_drive_monitor.sh
      ```
 
 4. **Start the script:**
@@ -40,9 +40,9 @@ This document explains how to use a script to automatically monitor a folder for
 
      ```bash
      # Run the script in the terminal
-     ./monitor.sh
+     ./google_drive_monitor.sh
      # Run the script in the background
-     nohup ./monitor.sh &
+     nohup ./google_drive_monitor.sh &
      ```
 
      * This will start the script in the foreground, continuously monitoring the folder for changes.
@@ -52,7 +52,7 @@ This document explains how to use a script to automatically monitor a folder for
    * **Terminate the process:** If the script is running in the background, you can find its process ID (PID) using the `ps` command and then terminate it using the `kill` command. For example:
 
      ```bash
-     kill $(ps aux | grep -v grep | grep monitor.sh | awk '{print $2}')
+     kill $(ps aux | grep -v grep | grep google_drive_monitor.sh | awk '{print $2}')
      ```
 
 **Explanation:**
