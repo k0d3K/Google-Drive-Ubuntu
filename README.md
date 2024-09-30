@@ -42,7 +42,7 @@ This document explains how to use a script to automatically monitor a folder for
      # Run the script in the terminal
      ./google_drive_monitor.sh
      # Run the script in the background
-     nohup ./google_drive_monitor.sh &
+     nohup ./google_drive_monitor.sh
      ```
 
      * This will start the script in the foreground, continuously monitoring the folder for changes.
